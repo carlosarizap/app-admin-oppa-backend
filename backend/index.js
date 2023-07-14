@@ -24,7 +24,7 @@ const packRoutes = require('./routes/packRoutes');
 app.use(cors({
     origin: [
         'https://www.app-admin-oppa.onrender.com'
-    ]
+    ],mode: "no-cors"
 }
     
 ))
