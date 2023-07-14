@@ -21,13 +21,15 @@ const bancoRoutes = require('./routes/bancoRoutes');
 const profesionestadoRoutes = require('./routes/profesionestadoRoutes');
 const packRoutes = require('./routes/packRoutes');
 
-app.use(cors({
-    origin: [
-        'https://www.app-admin-oppa.onrender.com'
-    ],mode: "no-cors"
-}
-    
-))
+const corsOpts = {
+    origin: '*',
+    credentials: true,
+    methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
+    allowedHeaders: ['Content-Type'],
+    exposedHeaders: ['Content-Type']
+};
+
+app.use(cors(corsOpts))
 app.use(express.json())
 
 mongoose.connect('mongodb+srv://user:user@oppatest.c7oxgel.mongodb.net/OppaTest?retryWrites=true&w=majority', {
