@@ -22,7 +22,7 @@ const profesionestadoRoutes = require('./routes/profesionestadoRoutes');
 const packRoutes = require('./routes/packRoutes');
 
 const corsOpts = {
-    origin: 'https://app-admin-oppa.onrender.com/',
+    origin: 'https://app-admin-oppa.onrender.com',
     credentials: true,
     methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
     allowedHeaders: ['Content-Type'],
