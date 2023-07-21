@@ -30,7 +30,10 @@ uploadImageRouter.post('/', upload.single('image'), (req, res) => {
   const publicUrl = `https://app-admin-oppa-api.onrender.com/images/${req.file.filename}`;
 
   // Send a response to the client indicating that the image was uploaded successfully.
+  console.log(publicUrl)
+  console.log(imagePath)
   res.json({ message: 'Image uploaded successfully', imageUrl: publicUrl });
+  
 });
 
 module.exports = uploadImageRouter;
