@@ -1,13 +1,16 @@
 const express = require('express');
 const multer = require('multer');
+const path = require('path'); // Import the 'path' module
 const uploadImageRouter = express.Router();
 
 // Define the storage and upload configuration for Multer
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      const destinationFolder = path.join(__dirname, '../images'); // Use absolute path
-      cb(null, destinationFolder);
-    },
+  destination: function (req, file, cb) {
+    // Set the destination folder where the uploaded images will be stored.
+    // Construct the absolute path to the 'images' folder using path.join and __dirname.
+    const destinationFolder = path.join(__dirname, '../images');
+    cb(null, destinationFolder);
+  },
   filename: function (req, file, cb) {
     // Set the filename of the uploaded image.
     // You can use a unique filename here, or keep the original filename if preferred.
