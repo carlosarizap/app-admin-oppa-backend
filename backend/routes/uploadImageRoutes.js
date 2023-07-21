@@ -22,6 +22,7 @@ const upload = multer({ storage: storage });
 // Handle the POST request to upload the image
 uploadImageRouter.post('/', upload.single('image'), (req, res) => {
   const imagePath = req.file.path;
+  console.log(imagePath)
   res.json({ message: 'Image uploaded successfully', imagePath });
 });
 

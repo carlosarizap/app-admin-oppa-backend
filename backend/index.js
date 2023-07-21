@@ -23,7 +23,6 @@ const packRoutes = require('./routes/packRoutes');
 const uploadImageRoutes = require('./routes/uploadImageRoutes');
 
 const corsOpts = {
-    //origin: ['https://app-admin-oppa.onrender.com','http://localhost:3000'],
     origin: ['https://app-admin-oppa.onrender.com','http://localhost:3000'],
     credentials: true,
     methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
