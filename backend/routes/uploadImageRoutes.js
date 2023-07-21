@@ -13,9 +13,8 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     // Set the filename of the uploaded image.
-    // You can use a unique filename here, or keep the original filename if preferred.
-    //const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    const uniqueSuffix = "test";
+    // Generate a unique suffix dynamically based on the current timestamp and a random number.
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     cb(null, file.fieldname + '-' + uniqueSuffix + '.' + file.originalname.split('.').pop());
   },
 });
@@ -28,7 +27,7 @@ uploadImageRouter.post('/', upload.single('image'), (req, res) => {
   // You can store the file path or URL in your database or use it for further processing.
 
   const imagePath = req.file.path; // The file path where the image is stored on the server.
-  
+
   // Send a response to the client indicating that the image was uploaded successfully.
   res.json({ message: 'Image uploaded successfully', imagePath });
 });
