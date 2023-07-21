@@ -20,9 +20,10 @@ const proveedorRoutes = require('./routes/proveedorRoutes');
 const bancoRoutes = require('./routes/bancoRoutes');
 const profesionestadoRoutes = require('./routes/profesionestadoRoutes');
 const packRoutes = require('./routes/packRoutes');
+const uploadImageRoutes = require('./routes/uploadImageRoutes');
 
 const corsOpts = {
-    origin: 'https://app-admin-oppa.onrender.com',
+    origin: ['https://app-admin-oppa.onrender.com','http://localhost:3000'],
     credentials: true,
     methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
     allowedHeaders: ['Content-Type'],
@@ -59,6 +60,7 @@ app.use('/api/proveedores', proveedorRoutes);
 app.use('/api/bancos', bancoRoutes);
 app.use('/api/profesionEstados', profesionestadoRoutes);
 app.use('/api/packs', packRoutes);
+app.use('/api/upload', uploadImageRoutes);
 
 
 app.listen(4000, () => {
