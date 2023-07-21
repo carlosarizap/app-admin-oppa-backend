@@ -4,11 +4,10 @@ const uploadImageRouter = express.Router();
 
 // Define the storage and upload configuration for Multer
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    // Set the destination folder where the uploaded images will be stored.
-    // Replace 'YOUR_DESTINATION_FOLDER' with the actual folder path on your server.
-    cb(null, '/images');
-  },
+    destination: function (req, file, cb) {
+      const destinationFolder = path.join(__dirname, '../images'); // Use absolute path
+      cb(null, destinationFolder);
+    },
   filename: function (req, file, cb) {
     // Set the filename of the uploaded image.
     // You can use a unique filename here, or keep the original filename if preferred.
