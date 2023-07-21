@@ -27,9 +27,10 @@ uploadImageRouter.post('/', upload.single('image'), (req, res) => {
   // You can store the file path or URL in your database or use it for further processing.
 
   const imagePath = req.file.path; // The file path where the image is stored on the server.
+  const publicUrl = `https://app-admin-oppa-api.onrender.com/images/${req.file.filename}`;
 
   // Send a response to the client indicating that the image was uploaded successfully.
-  res.json({ message: 'Image uploaded successfully', imagePath });
+  res.json({ message: 'Image uploaded successfully', imageUrl: publicUrl });
 });
 
 module.exports = uploadImageRouter;
