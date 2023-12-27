@@ -13,7 +13,6 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Server Error' });
   }
 });
-
 // Retrieve a single profesionEstado by ID
 router.get('/:id', async (req, res) => {
   try {

@@ -21,6 +21,8 @@ const bancoRoutes = require('./routes/bancoRoutes');
 const profesionestadoRoutes = require('./routes/profesionestadoRoutes');
 const packRoutes = require('./routes/packRoutes');
 const uploadImageRoutes = require('./routes/uploadImageRoutes');
+const proveedorservicioRoutes = require('./routes/proveedorservicioRoutes');
+
 
 const corsOpts = {
     origin: ['https://app-admin-oppa.onrender.com','http://localhost:3000'],
@@ -61,6 +63,7 @@ app.use('/api/bancos', bancoRoutes);
 app.use('/api/profesionEstados', profesionestadoRoutes);
 app.use('/api/packs', packRoutes);
 app.use('/api/upload', uploadImageRoutes);
+app.use('/api/proveedorservicio', proveedorservicioRoutes);
 
 
 app.listen(4000, () => {
